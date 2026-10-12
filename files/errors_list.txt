@@ -1,0 +1,13 @@
+100 no-server
+101 db-error
+102 name-empty
+103 name-invalid
+104 phone_no-empty
+105 phone_no-invalid
+106 referred_by-empty
+107 referred_by-invalid
+108 academic_course_type-empty
+109 grad_type-empty
+110 courses-empty
+111 data-not-added
+
