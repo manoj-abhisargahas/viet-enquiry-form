@@ -2,13 +2,13 @@
 	$mysqli = "";
 	
 	function connectDb() {
-		$host = getenv('MYSQL_HOST');
-		$port = 3306;
-		$user = getenv('MYSQL_USERNAME');
-		$pword = getenv('MYSQL_PASSWORD');
-		$db = getenv('DB_NAME');
+		$host = getenv('MYSQL_HOST') ?: '127.0.0.1';
+		$port = getenv('MYSQLPORT') ?: '3306';
+		$user = getenv('MYSQL_USERNAME') ?: 'root';
+		$pword = getenv('MYSQL_PASSWORD') ?: '';
+		$db = getenv('DB_NAME') ?: 'viet_enquiry_db';
 		try {
-			$GLOBALS["mysqli"] = new mysqli($host, $user, $pword, $db);
+			$GLOBALS["mysqli"] = new mysqli($host, $user, $pword, $db, $port);
 		
 			if(!($GLOBALS["mysqli"]->connect_errno==0)) {
 				//ERROR: Database Connection Error.
